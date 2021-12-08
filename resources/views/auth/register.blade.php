@@ -48,7 +48,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-danger btn-user btn-block">
                                             {{ __('Register') }}
                                         </button>
                                     </div>
@@ -57,7 +57,7 @@
                                 <hr>
 
                                 <div class="text-center">
-                                    <a class="small" href="{{ route('login') }}">
+                                    <a class="text-danger" href="{{ route('login') }}">
                                         {{ __('Already have an account? Login!') }}
                                     </a>
                                 </div>

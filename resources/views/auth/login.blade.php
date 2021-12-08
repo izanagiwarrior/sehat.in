@@ -10,7 +10,6 @@
                         <div class="col-lg-12">
                             <div class="p-5">
                                 <div class="text-center mb-4">
-                                    <p class="text-title-login">login to</p>
                                     <img src="{{asset('img/logo.png')}}" width="200" alt="">
                                 </div>
 
@@ -50,6 +49,12 @@
                                             {{ __('Login') }}
                                         </button>
                                     </div>
+                                    <p style="text-align: center;">Don't have an account yet?</p>
+                                    @if (Route::has('register'))
+                                    <div class="text-center">
+                                        <a class="text-danger" href="{{ route('register') }}">{{ __('Create an Account!') }}</a>
+                                    </div>
+                                    @endif
                                 </form>
 
                                 <div class="text-center mt-5">
