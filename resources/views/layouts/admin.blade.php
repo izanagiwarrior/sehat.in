@@ -87,6 +87,22 @@
                     <span>{{ __('Kategori') }}</span></a>
             </li>
 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                {{ __('User Management') }}
+            </div>
+
+            <!-- Nav Item - Profile -->
+            <li class="nav-item {{ Nav::isRoute('user*') }}">
+                <a class="nav-link" href="{{ route('user') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>{{ __('Users') }}</span>
+                </a>
+            </li>
+
             @endif
 
             <!-- Divider -->
