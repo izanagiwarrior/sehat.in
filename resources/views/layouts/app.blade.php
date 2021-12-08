@@ -41,7 +41,8 @@
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="{{route('welcome')}}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('katalog')}}">Catalog</a></li>
-                    <a href={{route('login')}} class="btn btn-danger" type="button">Login</a>
+                    <li class="nav-item"><a href={{route('login')}} class="nav-link">Login</a></li>
+                    <a href={{route('register')}} class="btn btn-danger" type="button">Register</a>
                 </ul>
             </div>
         </div>

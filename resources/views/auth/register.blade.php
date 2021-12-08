@@ -7,30 +7,26 @@
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <div class="p-5">
-                                <div class="text-center">
+                                <div class="text-center mb-4">
                                     <h1 class="h4 text-gray-900 mb-4">{{ __('Register') }}</h1>
+                                    <img src="{{asset('img/logo.png')}}" width="200" alt="">
                                 </div>
-
                                 @if ($errors->any())
-                                    <div class="alert alert-danger border-left-danger" role="alert">
-                                        <ul class="pl-4 my-2">
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
+                                <div class="alert alert-danger border-left-danger" role="alert">
+                                    <ul class="pl-4 my-2">
+                                        @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                                 @endif
-
                                 <form method="POST" action="{{ route('register') }}" class="user">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user" name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
                                     </div>
-
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user" name="last_name" placeholder="{{ __('Last Name') }}" value="{{ old('last_name') }}" required>
                                     </div>
@@ -47,19 +43,25 @@
                                         <input type="password" class="form-control form-control-user" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required>
                                     </div>
 
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-danger btn-user btn-block">
+                                    <div class="form-group text-center">
+                                        <button type="submit" class="btn btn-danger btn-user">
                                             {{ __('Register') }}
                                         </button>
                                     </div>
+                                    <p style="text-align: center;">Already have an account?</p>
+                                    @if (Route::has('login'))
+                                    <div class="text-center">
+                                        <a class="text-danger" href="{{ route('login') }}">{{ __('Already have an account? Login!') }}</a>
+                                    </div>
+                                    @endif
                                 </form>
 
-                                <hr>
+                                <!-- Divider -->
+                                <hr class="sidebar-divider my-0">
 
-                                <div class="text-center">
-                                    <a class="text-danger" href="{{ route('login') }}">
-                                        {{ __('Already have an account? Login!') }}
-                                    </a>
+                                <div class="text-center mt-2">
+                                    <a class="text-danger" href="{{ route('welcome') }}">{{ __('back to landing page') }}</a>
+                                    <p>v1.1.0</p>
                                 </div>
                             </div>
                         </div>

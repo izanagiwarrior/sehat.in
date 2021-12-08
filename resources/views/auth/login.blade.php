@@ -10,9 +10,9 @@
                         <div class="col-lg-12">
                             <div class="p-5">
                                 <div class="text-center mb-4">
+                                    <h1 class="h4 text-gray-900 mb-4">{{ __('Login') }}</h1>
                                     <img src="{{asset('img/logo.png')}}" width="200" alt="">
                                 </div>
-
                                 @if ($errors->any())
                                 <div class="alert alert-danger border-left-danger" role="alert">
                                     <ul class="pl-4 my-2">
@@ -22,14 +22,11 @@
                                     </ul>
                                 </div>
                                 @endif
-
                                 <form method="POST" action="{{ route('login') }}" class="user">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user" name="email" placeholder="{{ __('Username') }}" value="{{ old('email') }}" required autofocus>
                                     </div>
-
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user" name="password" placeholder="{{ __('Password') }}" required>
                                     </div>
@@ -57,7 +54,10 @@
                                     @endif
                                 </form>
 
-                                <div class="text-center mt-5">
+                                <!-- Divider -->
+                                <hr class="sidebar-divider my-0">
+
+                                <div class="text-center mt-2">
                                     <a class="text-danger" href="{{ route('welcome') }}">{{ __('back to landing page') }}</a>
                                     <p>v1.1.0</p>
                                 </div>

@@ -15,7 +15,22 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Admin',
                 'last_name' => 'Admin',
-                'email' => 'admin@gmail.com',
+                'roles' => 'admin',
+                'email' => 'admin@sehatin.com',
+                'password' => 'password',
+            ],
+            [
+                'name' => 'example-customer',
+                'last_name' => 'example-customer',
+                'roles' => 'customer',
+                'email' => 'customer@sehatin.com',
+                'password' => 'password',
+            ],
+            [
+                'name' => 'example-mitra',
+                'last_name' => 'example-mitra',
+                'roles' => 'mitra',
+                'email' => 'mitra@sehatin.com',
                 'password' => 'password',
             ]
         ];

@@ -63,6 +63,8 @@
                     <span>{{ __('Home') }}</span></a>
             </li>
 
+            @if(Auth::user() && Auth::user()->roles == 'admin') {
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -84,6 +86,8 @@
                     <i class="fas fa-fw fa-filter"></i>
                     <span>{{ __('Kategori') }}</span></a>
             </li>
+
+            @endif
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
