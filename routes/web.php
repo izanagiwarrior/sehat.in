@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PageController@welcome')->name('welcome');
 Route::get('/katalog', 'PageController@katalog')->name('katalog');
 Route::get('/detail-produk/{id_product}', 'PageController@detailProduk')->name('detailProduk');
+Route::get('/payment/{id_product}', 'PageController@payment')->name('payment');
+Route::get('/success/{id_product}', 'PageController@topUp_process')->name('topUp_process');
 
 
 // ============================================================================

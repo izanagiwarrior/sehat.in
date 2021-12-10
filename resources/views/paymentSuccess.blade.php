@@ -14,41 +14,18 @@ function rupiah($angka)
     <div class="container px-4 px-lg-0 my-0">
     </div>
 </header>
-<!-- Product section-->
-<section class="py-5">
-    <div class="container px-4 px-lg-5 ">
-        <div class="row">
-            <div class="col-md-6">
-                <img class="card-img-top mb-5 h-100" style="object-fit: cover;" src="{{asset('storage/' . $product->photo)}}" alt="..." />
-            </div>
-            <div class="col-md-6 d-flex flex-column">
-                <div class="flex-fill">
-                    <h1 class="display-5 fw-bolder">{{$product->title}}</h1>
-                    <div class="fs-1 fw-bolder">
-                        <span>{{(rupiah($price))}}</span>
-                        <hr />
-                        <!-- Product actions-->
-                        <div class="card-footer pt-0 border-top-0 bg-transparent">
-                            <a class="btn btn-outline-warning mt-auto" href="{{route('payment', $product->id)}}">Order</a>
-                        </div>
-                    </div>
-                    @foreach ($material as $mt)
-                    <p>{{ $mt->name." : " }} {{(rupiah($mt->price))}}</p>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Recipe Product-->
 <section class="page-section" id="details">
     <div class="container px-4 px-lg-5 ">
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="detail text-left">
-                <h2>Detail Product</h2>
+                <h2>Payment Success !!</h2>
                 <hr>
-                <p style="font-size: 20px;">{{$product->description}}</p>
+                <div class="text-center">
+                    <h3>Location</h3>
+                    <img src="{{asset('img/otw.jpg')}}" alt="go pay" width="400" height="400" class="mr-3">
+                </div>
             </div>
         </div>
     </div>

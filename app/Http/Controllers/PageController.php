@@ -50,4 +50,26 @@ class PageController extends Controller
         $data = Products::latest()->take(4)->get();
         return view('detailProduk', compact('product', 'data', 'recipe', 'material', 'price'));
     }
+
+    public function payment(Request $request, $id_product)
+    {
+        $product = Products::find($id_product);
+        $recipe = Recipe::where('id_product','=',$product->id)->first();
+        $material = Material::where('id_product','=',$product->id)->get();
+        $price = $material->sum('price');
+        $data = Products::latest()->take(4)->get();
+
+        return view('payment', compact('product', 'data', 'recipe', 'material', 'price','id_product'));
+    }
+
+    public function topUp_process(Request $request, $id_product)
+    {
+        $product = Products::find($id_product);
+        $recipe = Recipe::where('id_product','=',$product->id)->first();
+        $material = Material::where('id_product','=',$product->id)->get();
+        $price = $material->sum('price');
+        $data = Products::latest()->take(4)->get();
+
+        return view('paymentSuccess', compact('product', 'data', 'recipe', 'material', 'price','id_product'));
+    }
 }
