@@ -14,7 +14,6 @@ function rupiah($angka)
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-black">
             <h1 class="display-4 fw-bolder">Catalog</h1>
-            <p class="lead fw-normal text-black-50 mb-0">Ximi Store sells many gaming product for all your gaming activity</p>
         </div>
         <div class="Search my-5">
             <div class="row height d-flex justify-content-center align-items-center">
@@ -42,7 +41,7 @@ function rupiah($angka)
                             <!-- Product name-->
                             <h5 class="fw-bolder">{{$pt->title}}</h5>
                             <!-- Product price-->
-                            <h4 class="fw-bolder-price">{{rupiah($pt->price)}}</h4>
+                            <!-- <h4 class="fw-bolder-price">{{rupiah($pt->price)}}</h4> -->
                         </div>
                     </div>
                     <!-- Product actions-->

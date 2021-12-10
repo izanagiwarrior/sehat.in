@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\Category;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -37,6 +38,21 @@ class DatabaseSeeder extends Seeder
 
         foreach ($user as $key => $value) {
             User::create($value);
+        }
+
+        $category = [
+            [
+                'name' => 'MAKANAN',
+                'photo' => 'null',
+            ],
+            [
+                'name' => 'MINUMAN',
+                'photo' => 'null',
+            ],
+        ];
+
+        foreach ($category as $key => $value) {
+            Category::create($value);
         }
     }
 }

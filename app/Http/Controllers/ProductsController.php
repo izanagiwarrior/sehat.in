@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Products;
+use App\Recipe;
 use Illuminate\Http\Request;
 
 use DataTables;
@@ -46,23 +47,28 @@ class ProductsController extends Controller
     {
         $request->validate([
             'category' => 'required',
-            'crafter' => 'required',
             'title' => 'required',
-            'price' => 'required',
             'description' => 'required',
             'foto' => 'required', 'mimes:jpg,jpeg,png',
+            'titlerecipe' => 'required',
+            'linkvideo' => 'required',
+            'descriptionrecipe' => 'required',
         ]);
 
         $product = new Products();
         $product->id_category = $request->category;
-        $product->crafter = $request->crafter;
         $product->title = $request->title;
-        $product->price = $request->price;
         $product->description = $request->description;
         $product->photo = Storage::disk('public')->put('product', $request->file('foto'));
-
         $product->save();
 
+        $recipe = new Recipe();
+        $recipe->id_product = $product->id;
+        $recipe->title = $request->titlerecipe;
+        $recipe->link_video = $request->linkvideo;
+        $recipe->description = $request->descriptionrecipe;
+        $recipe->save();
+        
         return redirect()->route('product')->withSuccess('Product created successfully.');
     }
 
@@ -75,25 +81,26 @@ class ProductsController extends Controller
     public function update_view($id)
     {
         $data = Products::find($id);
+        $data_recipe = Recipe::where('id_product','=',$data->id)->first();
         $category = Category::all();
-        return view('cms.product.update', compact('data', 'category'));
+        return view('cms.product.update', compact('data', 'category','data_recipe'));
     }
 
     public function update_process(Request $request, $id)
     {
         $request->validate([
             'category' => 'required',
-            'crafter' => 'required',
             'title' => 'required',
-            'price' => 'required',
             'description' => 'required',
             'foto' => 'mimes:jpg,jpeg,png',
+            'titlerecipe' => 'required',
+            'linkvideo' => 'required',
+            'descriptionrecipe' => 'required',
         ]);
 
         $product = Products::find($id);
         $product->id_category = $request->category;
         $product->title = $request->title;
-        $product->price = $request->price;
         $product->description = $request->description;
 
         if (isset($request->foto)) {
@@ -105,6 +112,12 @@ class ProductsController extends Controller
         }
 
         $product->save();
+
+        $recipe = Recipe::where('id_product','=',$id)->first();
+        $recipe->title = $request->titlerecipe;
+        $recipe->link_video = $request->linkvideo;
+        $recipe->description = $request->descriptionrecipe;
+        $recipe->save();
 
         return redirect()->route('product')->withSuccess('Product updated successfully.');
     }

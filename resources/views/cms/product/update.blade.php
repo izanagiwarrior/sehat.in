@@ -93,21 +93,15 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="name">{{ __('Product Title') }}<span class="small text-danger">*</span></label>
-                                    <input type="text" id="title" class="form-control" name="title" value="{{ $data->title }}" placeholder="Example : Chair, Table, etc...">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="name">{{ __('Product Title') }}<span class="small text-danger">*</span></label>
+                                        <input type="text" id="title" class="form-control" name="title" value="{{ $data->title }}" placeholder="Example : Chair, Table, etc...">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="name">{{ __('Crafter Name') }}<span class="small text-danger">*</span></label>
-                                    <input type="text" id="crafter" class="form-control" name="crafter" value="{{ $data->crafter }}" placeholder="Example : Chair, Table, etc...">
-                                </div>
-
-                            </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="name">{{ __('Product Category') }}<span class="small text-danger">*</span></label>
                                     <select class="form-control" id="category" name="category">
@@ -121,27 +115,9 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="price">{{ __('Product Price') }}<span class="small text-danger">*</span></label>
-                                    <input type="number" id="price" class="form-control" name="price" value="{{ $data->price }}" placeholder="input price...">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="form-group">
                                     <label class="form-control-label" for="name">{{ __('Product Description') }}<span class="small text-danger">*</span></label>
                                     <textarea class="form-control" id="description" name="description" rows="3">{{ $data->description }}</textarea>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Button -->
-                    <div class="pl-lg-4">
-                        <div class="row">
-                            <div class="col text-center">
-                                <a href="{{ url()->previous() }}" class="btn btn-dark">Back</a>
-                                <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
                             </div>
                         </div>
                     </div>
@@ -152,6 +128,64 @@
 
         </div>
 
+    </div>
+
+    <!-- Recipe -->
+
+    <div class="row">
+        <div class="col-lg-12 order-lg-1">
+
+            <div class="card shadow mb-4">
+
+                <div class="card-body">
+
+                    <div class="pl-lg-4">
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="titlerecipe">{{ __('Recipe Title') }}<span class="small text-danger">*</span></label>
+                                        <input type="text" id="titlerecipe" class="form-control" name="titlerecipe" value="{{ $data_recipe->title }}" placeholder="Example : Chair, Table, etc...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="linkvideo">{{ __('Video Link') }}<span class="small text-danger">*</span></label>
+                                        <input type="text" id="linkvideo" class="form-control" name="linkvideo" value="{{ $data_recipe->link_video }}" placeholder="Example : Chair, Table, etc...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="descriptionrecipe">{{ __('Recipe Description') }}<span class="small text-danger">*</span></label>
+                                    <textarea class="form-control" id="descriptionrecipe" name="descriptionrecipe" rows="3">{{ $data_recipe->description }}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="pl-lg-4">
+                        <div class="row">
+                            <div class="col text-center">
+                                <a href="{{ url()->previous() }}" class="btn btn-dark">Back</a>
+                                <button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
 </form>

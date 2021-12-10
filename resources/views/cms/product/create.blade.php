@@ -96,14 +96,8 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
-                            <div class="col-lg-6">
-                                <label class="form-control-label" for="name">{{ __('Crafter Name') }}<span class="small text-danger">*</span></label>
-                                <input type="text" id="crafter" class="form-control" name="crafter" value="{{ $crafter->name }}" placeholder="{{ $crafter->name }}">
-                                <small class="text-muted">default admin name...</small>
-                            </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="name">{{ __('Product Category') }}<span class="small text-danger">*</span></label>
                                     <select class="form-control" id="category" name="category">
@@ -114,22 +108,60 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="price">{{ __('Product Price') }}<span class="small text-danger">*</span></label>
-                                    <input type="number" id="price" class="form-control" name="price" value="{{ old('price') }}" placeholder="input price...">
-                                </div>
-                            </div>
-                        </div>
-
-
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="name">{{ __('Product Description') }}<span class="small text-danger">*</span></label>
                                     <textarea class="form-control" id="description" name="description" rows="3">{{ old('description')}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Recipe -->
+
+    <div class="row">
+        <div class="col-lg-12 order-lg-1">
+
+            <div class="card shadow mb-4">
+
+                <div class="card-body">
+
+                    <div class="pl-lg-4">
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="titlerecipe">{{ __('Recipe Title') }}<span class="small text-danger">*</span></label>
+                                        <input type="text" id="titlerecipe" class="form-control" name="titlerecipe" value="{{ old('titlerecipe')}}" placeholder="Example : Chair, Table, etc...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="linkvideo">{{ __('Video Link') }}<span class="small text-danger">*</span></label>
+                                        <input type="text" id="linkvideo" class="form-control" name="linkvideo" value="{{ old('linkvideo')}}" placeholder="Example : Chair, Table, etc...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="descriptionrecipe">{{ __('Recipe Description') }}<span class="small text-danger">*</span></label>
+                                    <textarea class="form-control" id="descriptionrecipe" name="descriptionrecipe" rows="3">{{ old('description')}}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +182,6 @@
             </div>
 
         </div>
-
     </div>
 
 </form>

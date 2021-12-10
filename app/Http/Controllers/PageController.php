@@ -28,9 +28,7 @@ class PageController extends Controller
                 $search = $request->search;
             }
             $product = Products::where('title', 'LIKE', '%' . $search . '%')
-                ->orWhere('crafter', 'LIKE', '%' . $search . '%')
                 ->orWhere('description', 'LIKE', '%' . $search . '%')
-                ->orWhere('price', 'LIKE', '%' . $search . '%')
                 ->paginate(8);
         }
         return view('katalog', compact('product', 'category', 'search'));

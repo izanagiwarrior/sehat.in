@@ -8,8 +8,8 @@
 <!-- Masthead-->
 <header class="masthead">
     <div class="container">
-        <h1>Gamers Needs</h1>
-        <p>Ximi Store sells many gaming product for all your gaming activity</p>
+        <h1>Sehatin</h1>
+        <p>Penuhi kebutuhan konsumtif dan kesehatan mu !!</p>
         <a class="btn btn-danger btn-xl text-uppercase rounded" href="{{route('katalog')}}">See Catalog</a>
     </div>
 </header>
@@ -18,7 +18,6 @@
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Lastest Product</h2>
-            <h3 class="section-subheading text-muted">Ximi Store has a lot of digital products</h3>
 
         </div>
         <div class="row">

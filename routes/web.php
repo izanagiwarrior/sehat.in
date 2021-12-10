@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function () {
         });
 
         // ===========================================================
-        // ======================= MANAGEMENT ========================
+        // ========================== DONE ===========================
         // ===========================================================
 
         // Users
@@ -70,6 +70,10 @@ Route::middleware('auth')->group(function () {
             Route::post('/update/{id}', 'CategoryController@update_process')->name('.update.process');
             Route::get('/delete/{id}', 'CategoryController@delete')->name('.delete');
         });
+
+        // ===========================================================
+        // ======================= MANAGEMENT ========================
+        // ===========================================================
 
         // Product
         Route::prefix('product')->name('product')->group(function () {
