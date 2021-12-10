@@ -95,7 +95,7 @@
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label class="form-control-label" for="name">{{ __('Product Title') }}<span class="small text-danger">*</span></label>
-                                        <input type="text" id="title" class="form-control" name="title" value="{{ $data->title }}" placeholder="Example : Chair, Table, etc...">
+                                        <input type="text" id="title" class="form-control" name="title" value="{{ $data->title }}" placeholder="Example : Red Rice...">
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label class="form-control-label" for="titlerecipe">{{ __('Recipe Title') }}<span class="small text-danger">*</span></label>
-                                        <input type="text" id="titlerecipe" class="form-control" name="titlerecipe" value="{{ $data_recipe->title }}" placeholder="Example : Chair, Table, etc...">
+                                        <input type="text" id="titlerecipe" class="form-control" name="titlerecipe" value="{{ $data_recipe->title }}" placeholder="Title recipe...">
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +156,8 @@
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label class="form-control-label" for="linkvideo">{{ __('Video Link') }}<span class="small text-danger">*</span></label>
-                                        <input type="text" id="linkvideo" class="form-control" name="linkvideo" value="{{ $data_recipe->link_video }}" placeholder="Example : Chair, Table, etc...">
+                                        <input type="text" id="linkvideo" class="form-control" name="linkvideo" value="{{ $data_recipe->link_video }}" placeholder="Youtube embed link..">
+                                        <small>Example : https://www.youtube.com/embed/Sv-AR70ZgdE</small>
                                     </div>
                                 </div>
                             </div>
