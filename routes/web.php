@@ -36,7 +36,9 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('admin')->middleware('admin')->group(function () {
 
+        // ===========================================================
         // ========================= DEFAULT =========================
+        // ===========================================================
 
         // Store
         Route::prefix('profile')->name('profile')->group(function () {
@@ -44,7 +46,9 @@ Route::middleware('auth')->group(function () {
             Route::put('/', 'ProfileController@update')->name('.update');
         });
 
-        // ========================= MANAGEMENT =========================
+        // ===========================================================
+        // ======================= MANAGEMENT ========================
+        // ===========================================================
 
         // Users
         Route::prefix('user')->name('user')->group(function () {
@@ -110,6 +114,10 @@ Route::middleware('auth')->group(function () {
             Route::post('/create', 'OrderController@create_process')->name('.create.process');
             Route::get('/delete/{id}', 'OrderController@delete')->name('.delete');
         });
+
+        // ===========================================================
+        // =========================== END ===========================
+        // ===========================================================
 
 
     });
