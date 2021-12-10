@@ -16,7 +16,7 @@ function rupiah($angka)
 </header>
 <!-- Product section-->
 <section class="py-5">
-    <div class="container px-4 px-lg-5 my-5">
+    <div class="container px-4 px-lg-5 ">
         <div class="row">
             <div class="col-md-6">
                 <img class="card-img-top mb-5 h-100" style="object-fit: cover;" src="{{asset('storage/' . $product->photo)}}" alt="..." />
@@ -25,22 +25,25 @@ function rupiah($angka)
                 <div class="flex-fill">
                     <h1 class="display-5 fw-bolder">{{$product->title}}</h1>
                     <div class="fs-1 fw-bolder">
-                        <!-- <span>{{(rupiah($product->price))}}</span> -->
-                        <span>{{(rupiah(200000))}}</span>
+                        <span>{{(rupiah($price))}}</span>
                         <hr />
                         <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="card-footer pt-0 border-top-0 bg-transparent">
                             <a class="btn btn-outline-warning mt-auto" href="">Order</a>
                         </div>
                     </div>
+                    @foreach ($material as $mt)
+                    <p>{{ $mt->name." : " }} {{(rupiah($mt->price))}}</p>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Detail Product-->
-<section class="py-5">
-    <div class="container px-4 px-lg-5 my-5">
+
+<!-- Recipe Product-->
+<section class="page-section" id="details">
+    <div class="container px-4 px-lg-5 ">
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="detail text-left">
                 <h2>Detail Product</h2>
@@ -50,9 +53,23 @@ function rupiah($angka)
         </div>
     </div>
 </section>
-<section class="page-section" id="details">
 
+<!-- Recipe Product-->
+<section class="page-section" id="details">
+    <div class="container px-4 px-lg-5 ">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="detail text-left">
+                <h2>Recipe : {{$recipe->title}}</h2>
+                <hr>
+                <div class="text-center">
+                    <iframe width="560" height="315" src="{{$recipe->link_video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p style="font-size: 20px;">{{$recipe->description}}</p>
+            </div>
+        </div>
+    </div>
 </section>
+
 <!-- Related items section-->
 <section class="py-5 bg-light">
     <div class="container px-4 px-lg-5 mt-5">

@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Material;
 use Illuminate\Http\Request;
 use App\Products;
 use App\Store;
 use App\User;
 use App\View;
+use App\Recipe;
 
 class PageController extends Controller
 {
@@ -42,7 +44,10 @@ class PageController extends Controller
         $view->save();
 
         $product = Products::find($id_product);
+        $recipe = Recipe::where('id_product','=',$product->id)->first();
+        $material = Material::where('id_product','=',$product->id)->get();
+        $price = $material->sum('price');
         $data = Products::latest()->take(4)->get();
-        return view('detailProduk', compact('product', 'data'));
+        return view('detailProduk', compact('product', 'data', 'recipe', 'material', 'price'));
     }
 }
