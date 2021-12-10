@@ -59,7 +59,8 @@
                             @endif
 
                             <div class="d-flex justify-content-end">
-                                <a href="{{route('product.update', $dt->id)}}" class="btn btn-warning">Edit</a>
+                                <a href="{{route('material', $dt->id)}}" class="btn btn-success mx-3">Material</a>
+                                <a href="{{route('product.update', $dt->id)}}" class="btn btn-warning mx-3">Edit</a>
                                 <a href="{{route('product.delete', $dt->id)}}" class="btn btn-danger mx-3" onclick='return confirm("Are you sure?")'>Delete</a>
                             </div>
                         </div>

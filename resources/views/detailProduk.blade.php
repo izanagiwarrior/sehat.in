@@ -25,8 +25,13 @@ function rupiah($angka)
                 <div class="flex-fill">
                     <h1 class="display-5 fw-bolder">{{$product->title}}</h1>
                     <div class="fs-1 fw-bolder">
-                        <span>{{(rupiah($product->price))}}</span>
-                        <hr/>
+                        <!-- <span>{{(rupiah($product->price))}}</span> -->
+                        <span>{{(rupiah(200000))}}</span>
+                        <hr />
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <a class="btn btn-outline-warning mt-auto" href="">Order</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,13 +62,14 @@ function rupiah($angka)
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="{{asset('storage/' . $dt->photo)}}" alt="..." height="200px"/>
+                    <img class="card-img-top" src="{{asset('storage/' . $dt->photo)}}" alt="..." height="200px" />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
                             <h5 class="fw-bolder">{{$dt->title}}</h5>
                             <!-- Product price-->
+                            <!-- {{$dt->price}} -->
                             {{$dt->price}}
                         </div>
                     </div>

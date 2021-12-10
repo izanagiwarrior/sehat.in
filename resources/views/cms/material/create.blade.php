@@ -1,9 +1,9 @@
 @extends('layouts.admin')
-@section('title', 'Create User')
+@section('title', 'Create Material')
 
 @section('main-content')
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">{{ __('Create User') }}</h1>
+<h1 class="h3 mb-4 text-gray-800">{{ __('Create Material') }}</h1>
 
 @if (session('success'))
 <div class="alert alert-success border-left-success alert-dismissible fade show" role="alert">
@@ -24,7 +24,7 @@
 </div>
 @endif
 
-<form method="POST" action="{{ route('user.create.process') }}" autocomplete="off" enctype="multipart/form-data">
+<form method="POST" action="{{ route('material.create.process', $id) }}" autocomplete="off" enctype="multipart/form-data">
     @csrf
     <div class="row">
 
@@ -43,18 +43,8 @@
                                     <input type="text" class="form-control form-control-user" name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label" for="email">{{ __('E-mail') }}<span class="small text-danger">*</span></label>
-                                    <input type="email" class="form-control form-control-user" name="email" placeholder="{{ __('E-mail') }}" value="{{ old('email') }}" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label class="form-control-label" for="password">{{ __('Password') }}<span class="small text-danger">*</span></label>
-                                    <input type="password" class="form-control form-control-user" name="password" placeholder="{{ __('Password') }}" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label class="form-control-label" for="password">{{ __('Confirmation Password') }}<span class="small text-danger">*</span></label>
-                                    <input type="password" class="form-control form-control-user" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required>
+                                    <label class="form-control-label" for="price">{{ __('Price') }}<span class="small text-danger">*</span></label>
+                                    <input type="number" class="form-control form-control-user" name="price" placeholder="{{ __('Price') }}" value="{{ old('price') }}" required>
                                 </div>
                             </div>
                         </div>
