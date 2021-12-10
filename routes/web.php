@@ -26,7 +26,12 @@ Route::get('/detail-produk/{id_product}', 'PageController@detailProduk')->name('
 // ================================ L O G I N =================================
 // ============================================================================
 
-Auth::routes();
+Auth::routes(
+    [
+        'reset' => false, // Reset Password Routes...
+        'verify' => false, // Email Verification Routes...
+    ]
+);
 
 Route::middleware('auth')->group(function () {
 

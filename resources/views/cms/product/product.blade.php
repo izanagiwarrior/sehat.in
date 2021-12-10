@@ -35,7 +35,7 @@
 <div class="row mx-1 mb-5">
     <div class="col-lg-12 order-lg-1 bg-white rounded shadow">
         <div class="my-3 d-inline-block w-100">
-            <h6 class="m-0 font-weight-bold text-danger">Products</h6>
+            <h6 class="m-0 font-weight-bold text-warning">Products</h6>
         </div>
             <div class="row">
                 @foreach ($data as $dt)

@@ -42,7 +42,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{route('welcome')}}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('katalog')}}">Catalog</a></li>
                     <li class="nav-item"><a href={{route('login')}} class="nav-link">Login</a></li>
-                    <a href={{route('register')}} class="btn btn-danger" type="button">Register</a>
+                    <a href={{route('register')}} class="btn btn-warning" type="button">Register</a>
                 </ul>
             </div>
         </div>

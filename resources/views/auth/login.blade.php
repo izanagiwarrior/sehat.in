@@ -34,7 +34,7 @@
                                     <div class="form-group mb-4">
                                         @if (Route::has('password.request'))
                                         <div class="text-center">
-                                            <a class="text-danger" href="{{ route('password.request') }}">
+                                            <a class="text-warning" href="{{ route('password.request') }}">
                                                 {{ __('Forgot Password?') }}
                                             </a>
                                         </div>
@@ -42,14 +42,14 @@
                                     </div>
 
                                     <div class="form-group text-center">
-                                        <button type="submit" class="btn btn-danger btn-user">
+                                        <button type="submit" class="btn btn-warning btn-user">
                                             {{ __('Login') }}
                                         </button>
                                     </div>
                                     <p style="text-align: center;">Don't have an account yet?</p>
                                     @if (Route::has('register'))
                                     <div class="text-center">
-                                        <a class="text-danger" href="{{ route('register') }}">{{ __('Create an Account!') }}</a>
+                                        <a class="text-warning" href="{{ route('register') }}">{{ __('Create an Account!') }}</a>
                                     </div>
                                     @endif
                                 </form>
@@ -58,7 +58,7 @@
                                 <hr class="sidebar-divider my-0">
 
                                 <div class="text-center mt-2">
-                                    <a class="text-danger" href="{{ route('welcome') }}">{{ __('back to landing page') }}</a>
+                                    <a class="text-warning" href="{{ route('welcome') }}">{{ __('back to landing page') }}</a>
                                     <p>v1.1.0</p>
                                 </div>
                             </div>

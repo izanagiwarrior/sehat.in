@@ -10,7 +10,7 @@
     <div class="container">
         <h1>Sehatin</h1>
         <p>Penuhi kebutuhan konsumtif dan kesehatan mu !!</p>
-        <a class="btn btn-danger btn-xl text-uppercase rounded" href="{{route('katalog')}}">See Catalog</a>
+        <a class="btn btn-warning btn-xl text-uppercase rounded" href="{{route('katalog')}}">See Catalog</a>
     </div>
 </header>
 <!-- Portfolio Grid-->
@@ -40,7 +40,7 @@
             @endforeach
         </div>
         <div class="container text-center">
-            <a class="btn btn-danger btn-xl text-uppercase rounded" href="{{route('katalog')}}">See Catalog</a>
+            <a class="btn btn-warning btn-xl text-uppercase rounded" href="{{route('katalog')}}">See Catalog</a>
         </div>
     </div>
 </section>

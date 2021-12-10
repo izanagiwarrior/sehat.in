@@ -44,14 +44,14 @@
                                     </div>
 
                                     <div class="form-group text-center">
-                                        <button type="submit" class="btn btn-danger btn-user">
+                                        <button type="submit" class="btn btn-warning btn-user">
                                             {{ __('Register') }}
                                         </button>
                                     </div>
                                     <p style="text-align: center;">Already have an account?</p>
                                     @if (Route::has('login'))
                                     <div class="text-center">
-                                        <a class="text-danger" href="{{ route('login') }}">{{ __('Already have an account? Login!') }}</a>
+                                        <a class="text-warning" href="{{ route('login') }}">{{ __('Already have an account? Login!') }}</a>
                                     </div>
                                     @endif
                                 </form>
@@ -60,7 +60,7 @@
                                 <hr class="sidebar-divider my-0">
 
                                 <div class="text-center mt-2">
-                                    <a class="text-danger" href="{{ route('welcome') }}">{{ __('back to landing page') }}</a>
+                                    <a class="text-warning" href="{{ route('welcome') }}">{{ __('back to landing page') }}</a>
                                     <p>v1.1.0</p>
                                 </div>
                             </div>
