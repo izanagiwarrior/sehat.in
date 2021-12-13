@@ -11,7 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title') | Kampung Rotan</title>
+    <title>@yield('title') | Sehat.in</title>
 
     @stack('upper-css')
 
@@ -187,7 +187,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>&copy; Sehatin 2021</span>
+                        <span>&copy; Sehat.in 2021</span>
                     </div>
                 </div>
             </footer>

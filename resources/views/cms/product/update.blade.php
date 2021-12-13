@@ -177,7 +177,7 @@
                         <div class="row">
                             <div class="col text-center">
                                 <a href="{{ url()->previous() }}" class="btn btn-dark">Back</a>
-                                <button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
+                                <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
                             </div>
                         </div>
                     </div>

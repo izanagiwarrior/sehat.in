@@ -8,7 +8,7 @@
 <!-- Masthead-->
 <header class="masthead">
     <div class="container">
-        <h1>Sehatin</h1>
+        <h1>Sehat.in</h1>
         <p>Penuhi kebutuhan konsumtif dan kesehatan mu !!</p>
         <a class="btn btn-warning btn-xl text-uppercase rounded" href="{{route('katalog')}}">See Catalog</a>
     </div>
