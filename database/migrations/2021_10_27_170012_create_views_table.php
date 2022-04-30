@@ -15,8 +15,13 @@ class CreateViewsTable extends Migration
     {
         Schema::create('views', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('reference_id');
+            $table->unsignedInteger('id_product');
             $table->timestamps();
+
+            $table->foreign('id_product')
+                ->references('id')
+                ->on('products')
+                ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

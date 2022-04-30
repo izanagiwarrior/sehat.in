@@ -16,7 +16,10 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_product');
-            $table->unsignedInteger('id_checkout');
+            $table->unsignedInteger('id_user');
+            // $table->unsignedInteger('id_checkout');
+            $table->integer('price');
+            $table->string('status')->default('Pending');
             $table->timestamps();
             $table->softDeletes();
 
@@ -25,10 +28,15 @@ class CreateOrdersTable extends Migration
                 ->on('products')
                 ->onDelete('cascade')->onUpdate('cascade');
 
-            $table->foreign('id_checkout')
+            $table->foreign('id_user')
                 ->references('id')
-                ->on('checkouts')
+                ->on('users')
                 ->onDelete('cascade')->onUpdate('cascade');
+
+            // $table->foreign('id_checkout')
+            //     ->references('id')
+            //     ->on('checkouts')
+            //     ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

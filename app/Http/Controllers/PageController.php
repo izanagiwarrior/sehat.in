@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Material;
-use Illuminate\Http\Request;
 use App\Products;
 use App\Store;
 use App\User;
 use App\View;
 use App\Recipe;
+use App\Order;
+
+use DataTables;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class PageController extends Controller
 {
@@ -40,12 +46,12 @@ class PageController extends Controller
     {
         // adding view
         $view = new View();
-        $view->reference_id = $id_product;
+        $view->id_product = $id_product;
         $view->save();
 
         $product = Products::find($id_product);
-        $recipe = Recipe::where('id_product','=',$product->id)->first();
-        $material = Material::where('id_product','=',$product->id)->get();
+        $recipe = Recipe::where('id_product', '=', $product->id)->first();
+        $material = Material::where('id_product', '=', $product->id)->get();
         $price = $material->sum('price');
         $data = Products::latest()->take(4)->get();
         return view('detailProduk', compact('product', 'data', 'recipe', 'material', 'price'));
@@ -54,22 +60,37 @@ class PageController extends Controller
     public function payment(Request $request, $id_product)
     {
         $product = Products::find($id_product);
-        $recipe = Recipe::where('id_product','=',$product->id)->first();
-        $material = Material::where('id_product','=',$product->id)->get();
+        $recipe = Recipe::where('id_product', '=', $product->id)->first();
+        $material = Material::where('id_product', '=', $product->id)->get();
         $price = $material->sum('price');
         $data = Products::latest()->take(4)->get();
 
-        return view('payment', compact('product', 'data', 'recipe', 'material', 'price','id_product'));
+        $order = new Order();
+        $order->id_user = Auth::user()->id;
+        $order->id_product = $id_product;
+        $order->price = $price;
+        $order->save();
+
+        return view('payment', compact('product', 'data', 'recipe', 'material', 'price', 'id_product'));
     }
 
     public function topUp_process(Request $request, $id_product)
     {
         $product = Products::find($id_product);
-        $recipe = Recipe::where('id_product','=',$product->id)->first();
-        $material = Material::where('id_product','=',$product->id)->get();
+        $recipe = Recipe::where('id_product', '=', $product->id)->first();
+        $material = Material::where('id_product', '=', $product->id)->get();
         $price = $material->sum('price');
         $data = Products::latest()->take(4)->get();
 
-        return view('paymentSuccess', compact('product', 'data', 'recipe', 'material', 'price','id_product'));
+        return view('paymentSuccess', compact('product', 'data', 'recipe', 'material', 'price', 'id_product'));
+    }
+
+    public function history(Request $request)
+    {
+        $data = Order::where('id_user', '=', Auth::user()->id)->get();
+        foreach($data as $d){
+            $d->{'product_name'} = Products::find($d->id_product)->title;
+        }
+        return view('history', compact('data'));
     }
 }

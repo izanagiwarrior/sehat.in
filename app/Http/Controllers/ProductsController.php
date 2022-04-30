@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Products;
 use App\Recipe;
+use App\View;
 use Illuminate\Http\Request;
 
 use DataTables;
@@ -22,11 +23,17 @@ class ProductsController extends Controller
      */
     public function index(Request $request)
     {
-        if (Auth::user()->role === 'admin') {
+        if (Auth::user()->roles === 'admin') {
             $data = Products::latest()->paginate(6);
         } else {
             $data = Products::where('id_user', '=', Auth::user()->id)->paginate(6);
         }
+
+        foreach ($data as $d) {
+            $view_count = View::where('id_product', '=', $d->id)->count();
+            $d->{'view_count'} = $view_count;
+        }
+
         return view('cms.product.product', compact('data'));
     }
 

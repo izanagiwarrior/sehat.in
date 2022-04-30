@@ -11,7 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title') | Sehat.in</title>
+    <title>@yield('title') | Sehat.in | Your Daily App</title>
 
     @stack('upper-css')
 
@@ -78,17 +78,22 @@
                 <li class="nav-item {{ Nav::isRoute('product*') }}">
                     <a class="nav-link" href="{{ route('product') }}">
                         <i class="fas fa-fw fa-shopping-bag"></i>
-                        <span>{{ __('Produk') }}</span></a>
+                        <span>{{ __('Product') }}</span></a>
+                </li>
+
+                <!-- Nav Item - Order -->
+                <li class="nav-item {{ Nav::isRoute('order*') }}">
+                    <a class="nav-link" href="{{ route('order') }}">
+                        <i class="fas fa-fw fa-list-alt"></i>
+                        <span>{{ __('Order') }}</span></a>
                 </li>
             @endif
             @if (Auth::user() && Auth::user()->roles == 'admin')
-                {
-
                 <!-- Nav Item - Category -->
                 <li class="nav-item {{ Nav::isRoute('category*') }}">
                     <a class="nav-link" href="{{ route('category') }}">
                         <i class="fas fa-fw fa-filter"></i>
-                        <span>{{ __('Kategori') }}</span></a>
+                        <span>{{ __('Category') }}</span></a>
                 </li>
 
                 <!-- Divider -->

@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Sehat.in</title>
+    <title>Sehat.in | Your Daily App</title>
+
+    @stack('upper-css')
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"
         rel="stylesheet">
 
@@ -28,6 +31,8 @@
 
     <!-- Favicon -->
     <link href="{{ asset('img/logo.png') }}" rel="icon" type="image/png">
+
+    @stack('css')
 </head>
 
 <body id="page-top">
@@ -46,7 +51,8 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('welcome') }}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('katalog') }}">Catalog</a></li>
                     @auth
-                        <li class="nav-item"><a class="nav-link" href="{{ route('cart') }}">Cart</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('history') }}">History</a>
+                        </li>
                         @if (Auth::user()->roles == 'admin' || Auth::user()->roles == 'mitra')
                             <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Dashboard</a>
                             </li>
@@ -147,12 +153,7 @@
     </div>
 
 
-
-
-
-
-
-
+    @stack('upper-script')
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -173,6 +174,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
+    @stack('script')
 </body>
 
 </html>

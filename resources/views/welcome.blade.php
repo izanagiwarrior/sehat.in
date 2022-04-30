@@ -9,7 +9,7 @@
 <header class="masthead">
     <div class="container">
         <h1>Sehat.in</h1>
-        <p>Penuhi kebutuhan konsumtif dan kesehatan mu !!</p>
+        <p>Fulfill your consumptive and health needs !!</p>
         <a class="btn btn-warning btn-xl text-uppercase rounded" href="{{route('katalog')}}">See Catalog</a>
     </div>
 </header>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,8 @@ use Illuminate\Support\Facades\Route;
 // ============================================================================
 
 Route::get('/', 'PageController@welcome')->name('welcome');
-Route::get('/katalog', 'PageController@katalog')->name('katalog');
+Route::get('/catalog', 'PageController@katalog')->name('katalog');
 Route::get('/detail-produk/{id_product}', 'PageController@detailProduk')->name('detailProduk');
-Route::get('/payment/{id_product}', 'PageController@payment')->name('payment');
-Route::get('/success/{id_product}', 'PageController@topUp_process')->name('topUp_process');
 
 
 // ============================================================================
@@ -36,6 +35,10 @@ Auth::routes(
 );
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/payment/{id_product}', 'PageController@payment')->name('payment');
+    Route::get('/success/{id_product}', 'PageController@topUp_process')->name('topUp_process');
+    Route::get('/history', 'PageController@history')->name('history');
 
     Route::middleware('mitra')->group(function () {
 
@@ -60,6 +63,12 @@ Route::middleware('auth')->group(function () {
             Route::get('/update/{id}', 'ProductsController@update_view')->name('.update');
             Route::post('/update/{id}', 'ProductsController@update_process')->name('.update.process');
             Route::get('/delete/{id}', 'ProductsController@delete')->name('.delete');
+        });
+
+        // Order
+        Route::prefix('order')->name('order')->group(function () {
+            Route::get('/', 'OrderController@index')->name('');
+            Route::get('/update/{id}/{status}', [OrderController::class, 'update_status'])->name('.status');
         });
 
         // Materials
