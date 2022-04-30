@@ -11,11 +11,7 @@
             ajax: {
                 url: "{{ route('material', $id) }}",
             },
-            columns: [{
-                    data: 'id',
-                    name: 'id',
-                    className: "text-center",
-                },
+            columns: [
                 {
                     data: 'name',
                     name: 'name'
@@ -95,7 +91,6 @@
                 <table class="table table-bordered data-table">
                     <thead>
                         <tr>
-                            <th width="50px">No</th>
                             <th>Name</th>
                             <th>Price</th>
                             <th width="100px">Action</th>
