@@ -22,7 +22,11 @@ class ProductsController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Products::latest()->paginate(6);
+        if (Auth::user()->role === 'admin') {
+            $data = Products::latest()->paginate(6);
+        } else {
+            $data = Products::where('id_user', '=', Auth::user()->id)->paginate(6);
+        }
         return view('cms.product.product', compact('data'));
     }
 
@@ -56,10 +60,68 @@ class ProductsController extends Controller
         ]);
 
         $product = new Products();
+        $product->id_user = Auth::user()->id;
         $product->id_category = $request->category;
         $product->title = $request->title;
         $product->description = $request->description;
         $product->photo = Storage::disk('public')->put('product', $request->file('foto'));
+
+        if (isset($request->energy)) {
+            $product->energy = $request->energy;
+        }
+        if (isset($request->protein)) {
+            $product->protein = $request->protein;
+        }
+        if (isset($request->fat)) {
+            $product->fat = $request->fat;
+        }
+        if (isset($request->carbohydrate)) {
+            $product->carbohydrate = $request->carbohydrate;
+        }
+        if (isset($request->calorie)) {
+            $product->calorie = $request->calorie;
+        }
+        if (isset($request->fiber)) {
+            $product->fiber = $request->fiber;
+        }
+        if (isset($request->sodium)) {
+            $product->sodium = $request->sodium;
+        }
+        if (isset($request->sugar)) {
+            $product->sugar = $request->sugar;
+        }
+        if (isset($request->vitamin_a)) {
+            $product->vitamin_a = $request->vitamin_a;
+        }
+        if (isset($request->vitamin_c)) {
+            $product->vitamin_c = $request->vitamin_c;
+        }
+        if (isset($request->vitamin_d)) {
+            $product->vitamin_d = $request->vitamin_d;
+        }
+        if (isset($request->vitamin_e)) {
+            $product->vitamin_e = $request->vitamin_e;
+        }
+        if (isset($request->vitamin_k)) {
+            $product->vitamin_k = $request->vitamin_k;
+        }
+        if (isset($request->calcium)) {
+            $product->calcium = $request->calcium;
+        }
+        if (isset($request->magnesium)) {
+            $product->magnesium = $request->magnesium;
+        }
+        if (isset($request->zinc)) {
+            $product->zinc = $request->zinc;
+        }
+        if (isset($request->water)) {
+            $product->zinc = $request->zinc;
+        }
+        if (isset($request->mineral)) {
+            $product->zinc = $request->zinc;
+        }
+
+
         $product->save();
 
         $recipe = new Recipe();
@@ -68,7 +130,7 @@ class ProductsController extends Controller
         $recipe->link_video = $request->linkvideo;
         $recipe->description = $request->descriptionrecipe;
         $recipe->save();
-        
+
         return redirect()->route('product')->withSuccess('Product created successfully.');
     }
 
@@ -81,9 +143,9 @@ class ProductsController extends Controller
     public function update_view($id)
     {
         $data = Products::find($id);
-        $data_recipe = Recipe::where('id_product','=',$data->id)->first();
+        $data_recipe = Recipe::where('id_product', '=', $data->id)->first();
         $category = Category::all();
-        return view('cms.product.update', compact('data', 'category','data_recipe'));
+        return view('cms.product.update', compact('data', 'category', 'data_recipe'));
     }
 
     public function update_process(Request $request, $id)
@@ -111,9 +173,64 @@ class ProductsController extends Controller
             $product->photo = Storage::disk('public')->put('product', $request->file('foto'));
         }
 
+        if (isset($request->energy)) {
+            $product->energy = $request->energy;
+        }
+        if (isset($request->protein)) {
+            $product->protein = $request->protein;
+        }
+        if (isset($request->fat)) {
+            $product->fat = $request->fat;
+        }
+        if (isset($request->carbohydrate)) {
+            $product->carbohydrate = $request->carbohydrate;
+        }
+        if (isset($request->calorie)) {
+            $product->calorie = $request->calorie;
+        }
+        if (isset($request->fiber)) {
+            $product->fiber = $request->fiber;
+        }
+        if (isset($request->sodium)) {
+            $product->sodium = $request->sodium;
+        }
+        if (isset($request->sugar)) {
+            $product->sugar = $request->sugar;
+        }
+        if (isset($request->vitamin_a)) {
+            $product->vitamin_a = $request->vitamin_a;
+        }
+        if (isset($request->vitamin_c)) {
+            $product->vitamin_c = $request->vitamin_c;
+        }
+        if (isset($request->vitamin_d)) {
+            $product->vitamin_d = $request->vitamin_d;
+        }
+        if (isset($request->vitamin_e)) {
+            $product->vitamin_e = $request->vitamin_e;
+        }
+        if (isset($request->vitamin_k)) {
+            $product->vitamin_k = $request->vitamin_k;
+        }
+        if (isset($request->calcium)) {
+            $product->calcium = $request->calcium;
+        }
+        if (isset($request->magnesium)) {
+            $product->magnesium = $request->magnesium;
+        }
+        if (isset($request->zinc)) {
+            $product->zinc = $request->zinc;
+        }
+        if (isset($request->water)) {
+            $product->zinc = $request->zinc;
+        }
+        if (isset($request->mineral)) {
+            $product->zinc = $request->zinc;
+        }
+
         $product->save();
 
-        $recipe = Recipe::where('id_product','=',$id)->first();
+        $recipe = Recipe::where('id_product', '=', $id)->first();
         $recipe->title = $request->titlerecipe;
         $recipe->link_video = $request->linkvideo;
         $recipe->description = $request->descriptionrecipe;
