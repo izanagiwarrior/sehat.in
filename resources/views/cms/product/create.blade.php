@@ -146,8 +146,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="energy">{{ __('Energy') }}</label>
-                                            <input type="number" id="energy" class="form-control" name="energy"
-                                                value="{{ old('energy') }}" placeholder="Energy amount (in mg)...">
+                                            <input type="text" id="energy" class="form-control" name="energy"
+                                                value="{{ old('energy') }}" placeholder="Energy amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -156,8 +156,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="protein">{{ __('Protein') }}</label>
-                                            <input type="number" id="protein" class="form-control" name="protein"
-                                                value="{{ old('protein') }}" placeholder="Protein amount (in mg)...">
+                                            <input type="text" id="protein" class="form-control" name="protein"
+                                                value="{{ old('protein') }}" placeholder="Protein amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -166,8 +166,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="fat">{{ __('Fat') }}</label>
-                                            <input type="number" id="fat" class="form-control" name="fat"
-                                                value="{{ old('fat') }}" placeholder="Fat amount (in mg)...">
+                                            <input type="text" id="fat" class="form-control" name="fat"
+                                                value="{{ old('fat') }}" placeholder="Fat amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -176,8 +176,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="carbohydrate">{{ __('Carbohydrate') }}</label>
-                                            <input type="number" id="carbohydrate" class="form-control" name="carbohydrate"
-                                                value="{{ old('carbohydrate') }}" placeholder="Carbohydrate amount (in mg)...">
+                                            <input type="text" id="carbohydrate" class="form-control" name="carbohydrate"
+                                                value="{{ old('carbohydrate') }}" placeholder="Carbohydrate amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -186,8 +186,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="calorie">{{ __('Calorie') }}</label>
-                                            <input type="number" id="calorie" class="form-control" name="calorie"
-                                                value="{{ old('calorie') }}" placeholder="Calorie amount (in mg)...">
+                                            <input type="text" id="calorie" class="form-control" name="calorie"
+                                                value="{{ old('calorie') }}" placeholder="Calorie amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -196,8 +196,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="fiber">{{ __('Fiber') }}</label>
-                                            <input type="number" id="fiber" class="form-control" name="fiber"
-                                                value="{{ old('fiber') }}" placeholder="Fiber amount (in mg)...">
+                                            <input type="text" id="fiber" class="form-control" name="fiber"
+                                                value="{{ old('fiber') }}" placeholder="Fiber amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -206,8 +206,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="sodium">{{ __('Sodium') }}</label>
-                                            <input type="number" id="sodium" class="form-control" name="sodium"
-                                                value="{{ old('sodium') }}" placeholder="Sodium amount (in mg)...">
+                                            <input type="text" id="sodium" class="form-control" name="sodium"
+                                                value="{{ old('sodium') }}" placeholder="Sodium amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -216,8 +216,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="sugar">{{ __('Sugar') }}</label>
-                                            <input type="number" id="sugar" class="form-control" name="sugar"
-                                                value="{{ old('sugar') }}" placeholder="Sugar amount (in mg)...">
+                                            <input type="text" id="sugar" class="form-control" name="sugar"
+                                                value="{{ old('sugar') }}" placeholder="Sugar amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -226,8 +226,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="vitamin_a">{{ __('Vitamin A') }}</label>
-                                            <input type="number" id="vitamin_a" class="form-control" name="vitamin_a"
-                                                value="{{ old('vitamin_a') }}" placeholder="Vitamin A amount (in mg)...">
+                                            <input type="text" id="vitamin_a" class="form-control" name="vitamin_a"
+                                                value="{{ old('vitamin_a') }}" placeholder="Vitamin A amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -236,8 +236,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="vitamin_c">{{ __('Vitamin C') }}</label>
-                                            <input type="number" id="vitamin_c" class="form-control" name="vitamin_c"
-                                                value="{{ old('vitamin_c') }}" placeholder="Vitamin C amount (in mg)...">
+                                            <input type="text" id="vitamin_c" class="form-control" name="vitamin_c"
+                                                value="{{ old('vitamin_c') }}" placeholder="Vitamin C amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -246,8 +246,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="vitamin_d">{{ __('Vitamin D') }}</label>
-                                            <input type="number" id="vitamin_d" class="form-control" name="vitamin_d"
-                                                value="{{ old('vitamin_d') }}" placeholder="Vitamin D amount (in mg)...">
+                                            <input type="text" id="vitamin_d" class="form-control" name="vitamin_d"
+                                                value="{{ old('vitamin_d') }}" placeholder="Vitamin D amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -256,8 +256,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="vitamin_e">{{ __('Vitamin E') }}</label>
-                                            <input type="number" id="vitamin_e" class="form-control" name="vitamin_e"
-                                                value="{{ old('vitamin_e') }}" placeholder="Vitamin E amount (in mg)...">
+                                            <input type="text" id="vitamin_e" class="form-control" name="vitamin_e"
+                                                value="{{ old('vitamin_e') }}" placeholder="Vitamin E amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -266,8 +266,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="vitamin_k">{{ __('Vitamin K') }}</label>
-                                            <input type="number" id="vitamin_k" class="form-control" name="vitamin_k"
-                                                value="{{ old('vitamin_k') }}" placeholder="Vitamin K amount (in mg)...">
+                                            <input type="text" id="vitamin_k" class="form-control" name="vitamin_k"
+                                                value="{{ old('vitamin_k') }}" placeholder="Vitamin K amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -276,8 +276,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="calcium">{{ __('Calcium') }}</label>
-                                            <input type="number" id="calcium" class="form-control" name="calcium"
-                                                value="{{ old('calcium') }}" placeholder="Calcium amount (in mg)...">
+                                            <input type="text" id="calcium" class="form-control" name="calcium"
+                                                value="{{ old('calcium') }}" placeholder="Calcium amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -286,8 +286,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="magnesium">{{ __('Magnesium') }}</label>
-                                            <input type="number" id="magnesium" class="form-control" name="magnesium"
-                                                value="{{ old('magnesium') }}" placeholder="Magnesium amount (in mg)...">
+                                            <input type="text" id="magnesium" class="form-control" name="magnesium"
+                                                value="{{ old('magnesium') }}" placeholder="Magnesium amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -296,8 +296,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="zinc">{{ __('Zinc') }}</label>
-                                            <input type="number" id="zinc" class="form-control" name="zinc"
-                                                value="{{ old('zinc') }}" placeholder="Zinc amount (in mg)...">
+                                            <input type="text" id="zinc" class="form-control" name="zinc"
+                                                value="{{ old('zinc') }}" placeholder="Zinc amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -306,8 +306,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="water">{{ __('Water') }}</label>
-                                            <input type="number" id="water" class="form-control" name="water"
-                                                value="{{ old('water') }}" placeholder="Water amount (in mg)...">
+                                            <input type="text" id="water" class="form-control" name="water"
+                                                value="{{ old('water') }}" placeholder="Water amount (with units)">
                                         </div>
                                     </div>
                                 </div>
@@ -316,8 +316,8 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label" for="mineral">{{ __('Mineral') }}</label>
-                                            <input type="number" id="mineral" class="form-control" name="mineral"
-                                                value="{{ old('mineral') }}" placeholder="Mineral amount (in mg)...">
+                                            <input type="text" id="mineral" class="form-control" name="mineral"
+                                                value="{{ old('mineral') }}" placeholder="Mineral amount (with units)">
                                         </div>
                                     </div>
                                 </div>

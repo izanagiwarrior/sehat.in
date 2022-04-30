@@ -62,28 +62,28 @@ function rupiah($angka)
             <div class="row gx-4 gx-lg-5">
                 <hr>
                 <div class="col-4">
-                    <p style="font-size: 20px;">Energy : {{ $product->energy }} mg</p>
-                    <p style="font-size: 20px;">Protein : {{ $product->protein }} mg</p>
-                    <p style="font-size: 20px;">Fat : {{ $product->fat }} mg</p>
-                    <p style="font-size: 20px;">Carbohydrate : {{ $product->carbohydrate }} mg</p>
-                    <p style="font-size: 20px;">Calorie : {{ $product->calorie }} mg</p>
-                    <p style="font-size: 20px;">Fiber : {{ $product->fiber }} mg</p>
+                    <p style="font-size: 20px;">Energy : {{ $product->energy }}</p>
+                    <p style="font-size: 20px;">Protein : {{ $product->protein }}</p>
+                    <p style="font-size: 20px;">Fat : {{ $product->fat }}</p>
+                    <p style="font-size: 20px;">Carbohydrate : {{ $product->carbohydrate }}</p>
+                    <p style="font-size: 20px;">Calorie : {{ $product->calorie }}</p>
+                    <p style="font-size: 20px;">Fiber : {{ $product->fiber }}</p>
                 </div>
                 <div class="col-4">
-                    <p style="font-size: 20px;">Vitamin A : {{ $product->vitamin_a }} mg</p>
-                    <p style="font-size: 20px;">Vitamin C : {{ $product->vitamin_c }} mg</p>
-                    <p style="font-size: 20px;">Vitamin D : {{ $product->vitamin_d }} mg</p>
-                    <p style="font-size: 20px;">Vitamin E : {{ $product->vitamin_e }} mg</p>
-                    <p style="font-size: 20px;">Vitamin K : {{ $product->vitamin_k }} mg</p>
-                    <p style="font-size: 20px;">Sodium : {{ $product->sodium }} mg</p>
+                    <p style="font-size: 20px;">Vitamin A : {{ $product->vitamin_a }}</p>
+                    <p style="font-size: 20px;">Vitamin C : {{ $product->vitamin_c }}</p>
+                    <p style="font-size: 20px;">Vitamin D : {{ $product->vitamin_d }}</p>
+                    <p style="font-size: 20px;">Vitamin E : {{ $product->vitamin_e }}</p>
+                    <p style="font-size: 20px;">Vitamin K : {{ $product->vitamin_k }}</p>
+                    <p style="font-size: 20px;">Sodium : {{ $product->sodium }}</p>
                 </div>
                 <div class="col-4">
-                    <p style="font-size: 20px;">Sugar : {{ $product->sugar }} mg</p>
-                    <p style="font-size: 20px;">Calcium : {{ $product->calcium }} mg</p>
-                    <p style="font-size: 20px;">Magnesium : {{ $product->magnesium }} mg</p>
-                    <p style="font-size: 20px;">Zinc : {{ $product->zinc }} mg</p>
-                    <p style="font-size: 20px;">Water : {{ $product->water }} mg</p>
-                    <p style="font-size: 20px;">Mineral : {{ $product->mineral }} mg</p>
+                    <p style="font-size: 20px;">Sugar : {{ $product->sugar }}</p>
+                    <p style="font-size: 20px;">Calcium : {{ $product->calcium }}</p>
+                    <p style="font-size: 20px;">Magnesium : {{ $product->magnesium }}</p>
+                    <p style="font-size: 20px;">Zinc : {{ $product->zinc }}</p>
+                    <p style="font-size: 20px;">Water : {{ $product->water }}</p>
+                    <p style="font-size: 20px;">Mineral : {{ $product->mineral }}</p>
                 </div>
             </div>
         </div>
